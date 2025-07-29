@@ -24,15 +24,15 @@ class PriceActivity : AppCompatActivity() {
         }
 
         val txtPrice = findViewById<TextInputEditText>(R.id.txt_price)
-        val btnContinuar = findViewById<Button>(R.id.btn_continuar1)
+        val btnProximo = findViewById<Button>(R.id.btn_proximo1)
 
-        btnContinuar.setOnClickListener {
+        btnProximo.setOnClickListener {
             var txtPriceStr = txtPrice.text.toString()
             if (txtPriceStr == "") {
                 Snackbar
                     .make(
                         txtPrice,
-                        "preencha todos os campos" ,
+                        "Peencha o campo para seguir" ,
                         Snackbar.LENGTH_LONG
                     )
                     .show()

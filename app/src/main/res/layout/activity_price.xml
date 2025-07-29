@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/tv_preco"
+        android:id="@+id/txt_passo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-450dp"
@@ -21,14 +21,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_1of1"
+        android:id="@+id/txt_1of1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="      Preço do Combustível"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tv_preco"
+        app:layout_constraintBottom_toTopOf="@+id/txt_passo1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -37,7 +37,7 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_margin="39dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_preco"
+        app:layout_constraintTop_toBottomOf="@+id/txt_passo1"
         tools:layout_editor_absoluteX="1dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -49,11 +49,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_continuar1"
+        android:id="@+id/btn_proximo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="28dp"
-        android:text="Continuar"
+        android:text="Próximo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
