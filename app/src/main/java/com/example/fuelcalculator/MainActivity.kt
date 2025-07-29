@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+
         val iniciar = findViewById<Button>(R.id.btn_iniciar)
 
         iniciar.setOnClickListener{
