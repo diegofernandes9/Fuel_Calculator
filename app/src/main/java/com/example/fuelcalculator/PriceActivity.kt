@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
+const val PRICE_KEY = "PriceActivity.PRICE_KEY"
 
 class PriceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +23,6 @@ class PriceActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         val txtPrice = findViewById<TextInputEditText>(R.id.txt_price)
         val btnProximo = findViewById<Button>(R.id.btn_proximo1)
 
@@ -32,13 +32,14 @@ class PriceActivity : AppCompatActivity() {
                 Snackbar
                     .make(
                         txtPrice,
-                        "Peencha o campo para seguir" ,
+                        "Preencha o campo para seguir" ,
                         Snackbar.LENGTH_LONG
                     )
                     .show()
             } else {
-                var price = txtPriceStr.toFloat()
+                var preco = txtPriceStr.toFloat()
                 var intent = Intent(this, ConsumptionActivity::class.java)
+                intent.putExtra(PRICE_KEY , preco)
                 startActivity(intent)
             }
         }
