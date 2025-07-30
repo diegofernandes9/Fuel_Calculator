@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
+const val CONSUMPTION_KEY = "ConsumptionActivity.CONSUMPTION_KEY"
 
 class ConsumptionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,8 @@ class ConsumptionActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val preco = intent.getFloatExtra(PRICE_KEY , 0.0f)
+
         val txtConsumo = findViewById<TextInputEditText>(R.id.txt_consumo)
         val btnPromixo2 = findViewById<Button>(R.id.btn_proximo2)
 
@@ -30,13 +33,15 @@ class ConsumptionActivity : AppCompatActivity() {
                 Snackbar
                     .make(
                         txtConsumo,
-                        "Peencha o campo para seguir",
+                        "Preencha o campo para seguir",
                         Snackbar.LENGTH_LONG
                     )
                     .show()
             } else {
                 val consumo = txtConsumoStr.toFloat()
                 val intent = Intent(this, DistanceActivity::class.java)
+                intent.putExtra(CONSUMPTION_KEY , consumo)
+                intent.putExtra(PRICE_KEY , preco)
                 startActivity(intent)
             }
         }
