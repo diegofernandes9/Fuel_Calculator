@@ -33,7 +33,7 @@ class ConsumptionActivity : AppCompatActivity() {
                 Snackbar
                     .make(
                         txtConsumo,
-                        "Preencha o campo para seguir",
+                        "Preencha o campo acima para seguir",
                         Snackbar.LENGTH_LONG
                     )
                     .show()
