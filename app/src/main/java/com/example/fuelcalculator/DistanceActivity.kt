@@ -1,4 +1,5 @@
 package com.example.fuelcalculator
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
+
+const val DISTANCE_KEY = "DistanceActivity.DISTANCE_KEY"
 
 class DistanceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +33,7 @@ class DistanceActivity : AppCompatActivity() {
                 Snackbar
                     .make(
                         txtDistancia,
-                        "Preencha o último campo para ter o resultado",
+                        "Preencha o último campo acima para obter o resultado",
                         Snackbar.LENGTH_LONG
                     )
                     .show()
@@ -39,6 +42,13 @@ class DistanceActivity : AppCompatActivity() {
 
                 val resultado = (distancia/consumo)*preco
                 println(resultado)
+
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra(PRICE_KEY , preco)
+                intent.putExtra(CONSUMPTION_KEY , consumo)
+                intent.putExtra(DISTANCE_KEY , distancia)
+                intent.putExtra(RESULT_KEY , resultado)
+                startActivity(intent)
             }
         }
     }

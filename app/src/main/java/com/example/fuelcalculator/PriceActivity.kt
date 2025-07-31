@@ -32,7 +32,7 @@ class PriceActivity : AppCompatActivity() {
                 Snackbar
                     .make(
                         txtPrice,
-                        "Preencha o campo para seguir" ,
+                        "Preencha o campo acima para seguir" ,
                         Snackbar.LENGTH_LONG
                     )
                     .show()
